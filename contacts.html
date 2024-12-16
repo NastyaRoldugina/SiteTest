@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Beatles - Контакты</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Бургер-меню */
+        .burger-checkbox {
+            display: none;
+        }
+
+        .burger {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .burger::before,
+        .burger::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            position: absolute;
+            left: 0;
+        }
+
+        .burger::before {
+            top: -10px;
+        }
+
+        .burger::after {
+            top: 10px;
+        }
+
+        .menu-list {
+            display: none;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-checkbox:checked ~ .menu-list {
+            display: block;
+        }
+
+        .menu-item {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+        }
+
+        /* Стиль для фона */
+        body {
+            background-color: #87CEFA; /* Голубой фон */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Скрытие ссылок в основном содержимом страницы */
+        .navigation {
+            display: none;
+        }
+
+        /* Карта */
+        #map {
+            height: 400px; /* Высота карты */
+            width: 100%; /* Ширина карты */
+        }
+
+        /* Стили для текста */
+        h1, h3 {
+            color: #000000;
+            text-align: center;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            width: 50%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Бургер-меню -->
+    <div class="menu">
+        <input type="checkbox" id="burger-checkbox" class="menu-checkbox">
+        <label for="burger-checkbox" class="burger"></label>
+        <ul class="menu-list">
+            <li><a href="index.html" class="menu-item">Главная</a></li>
+            <li><a href="info.html" class="menu-item">Общая информация</a></li>
+            <li><a href="history.html" class="menu-item">История</a></li>
+            <li><a href="film.html" class="menu-item">Фильмография</a></li>
+            <li><a href="disc.html" class="menu-item">Дискография</a></li>
+            <li><a href="links.html" class="menu-item">Источники</a></li>
+            <li><a href="shop.html" class="menu-item">Магазин</a></li>
+            <li><a href="contacts.html" class="menu-item">Контакты</a></li>
+        </ul>
+    </div>
+
+    <!-- Основное содержимое страницы Контакты -->
+    <main>
+        <h1>Контакты</h1>
+        <h3>Наша почта: <a href="mailto:gregl@rambler.ru?&subject=Beatles&body=Привет">Напишите нам</a></h3>
+
+        <h3>Мы в социальных сетях:</h3>
+        <a href="https://t.me/ZvezdichevOfficialbot">
+            <img src="tg.jpg" alt="tg.jpg" width="50">
+        </a>
+
+        <h1>Карта с определенной геолокацией</h1>
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            // Создание карты
+            var map = L.map('map').setView([51.5074, -0.1278], 13); // Пример: Лондон
+
+            // Добавление слоя OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            // Добавление маркера
+var marker = L.marker([51.5074, -0.1278]).addTo(map);
+            marker.bindPopup('Лондон').openPopup();
+        </script>
+
+        <hr>
+        <p align="center" style="font-family: Arial, sans-serif; font-size: 12px;">&copy; Все права защищены.</p>
+    </main>
+</body>
+</html>

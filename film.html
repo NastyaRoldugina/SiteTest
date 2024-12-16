@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Beatles - Фильмография</title>
+    <style>
+        /* Бургер-меню */
+        .burger-checkbox {
+            display: none;
+        }
+
+        .burger {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .burger::before,
+        .burger::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            position: absolute;
+            left: 0;
+        }
+
+        .burger::before {
+            top: -10px;
+        }
+
+        .burger::after {
+            top: 10px;
+        }
+
+        .menu-list {
+            display: none;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-checkbox:checked ~ .menu-list {
+            display: block;
+        }
+
+        .menu-item {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+        }
+
+        /* Стиль для фона */
+        body {
+            background-color: #87CEFA; /* Голубой фон */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Скрытие ссылок в основном содержимом страницы */
+        .navigation {
+            display: none;
+        }
+
+        table {
+            margin: 20px auto;
+            border: 1px solid black;
+            width: 90%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            width: 150px;
+        }
+
+        /* Стиль для нижнего текста */
+        hr {
+            width: 50%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Бургер-меню -->
+    <div class="menu">
+        <input type="checkbox" id="burger-checkbox" class="menu-checkbox">
+        <label for="burger-checkbox" class="burger"></label>
+        <ul class="menu-list">
+            <li><a href="index.html" class="menu-item">Главная</a></li>
+            <li><a href="info.html" class="menu-item">Общая информация</a></li>
+            <li><a href="history.html" class="menu-item">История</a></li>
+            <li><a href="film.html" class="menu-item">Фильмография</a></li>
+            <li><a href="disc.html" class="menu-item">Дискография</a></li>
+            <li><a href="links.html" class="menu-item">Источники</a></li>
+            <li><a href="shop.html" class="menu-item">Магазин</a></li>
+            <li><a href="contacts.html" class="menu-item">Контакты</a></li>
+        </ul>
+    </div>
+
+    <!-- Основное содержимое страницы без ссылок -->
+    <main>
+        <table border="1">
+            <tr align="center">
+                <td>Год</td>
+                <td>Русское название</td>
+                <td>Оригинальное название</td>
+                <td>Афиша</td>
+                <td>Примечание</td>
+            </tr>
+
+            <tr align="center">
+                <td>1964</td>
+                <td>Вечер трудного дня</td>
+                <td>A Hard Day's Night</td>
+                <td><img src="фильм 2.jpg" width="150"></td>
+                <td>Х/Ф</td>
+            </tr>
+
+            <tr align="center">
+                <td>1965</td>
+                <td>На помощь!</td>
+                <td>Help!</td>
+                <td><img src="фильм1.jpg" width="150"></td>
+                <td>Х/Ф</td>
+            </tr>
+
+            <tr align="center">
+                <td>1967</td>
+                <td>Волшебное таинственное путешествие</td>
+                <td>Magical Mystery Tour</td>
+                <td><img src="фильм3.jpg" width="150"></td>
+                <td>Х/Ф</td>
+</tr>
+
+            <tr align="center">
+                <td>1968</td>
+                <td>Желтая подводная лодка</td>
+                <td>Yellow Submarine</td>
+                <td><img src="фильм4.jpg" width="150"></td>
+                <td>М/Ф</td>
+            </tr>
+
+            <tr align="center">
+                <td>1970</td>
+                <td>Пусть будет так</td>
+                <td>Let It Be</td>
+                <td><img src="фильм5.jpg" width="150"></td>
+                <td>Д/Ф</td>
+            </tr>
+        </table>
+
+        <hr>
+        <p align="center" style="font-family: Arial, sans-serif; font-size: 12px;">&copy; Все права защищены.</p>
+    </main>
+</body>
+</html>
